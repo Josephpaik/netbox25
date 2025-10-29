@@ -49,6 +49,27 @@ Once any new `.mo` files have been generated, they need to be committed and push
 !!! tip
     Run `git status` to check that both `*.mo` & `*.po` files have been updated as expected.
 
+## Supported Languages
+
+NetBox currently supports the following languages:
+
+* Chinese (zh)
+* Czech (cs)
+* Danish (da)
+* Dutch (nl)
+* English (en)
+* French (fr)
+* German (de)
+* Italian (it)
+* Japanese (ja)
+* Korean (ko)
+* Polish (pl)
+* Portuguese (pt)
+* Russian (ru)
+* Spanish (es)
+* Turkish (tr)
+* Ukrainian (uk)
+
 ## Proposing New Languages
 
 If you'd like to add support for a new language to NetBox, the first step is to [submit a GitHub issue](https://github.com/netbox-community/netbox/issues/new?assignees=&labels=type%3A+translation&projects=&template=translation.yaml) to capture the proposal. While we'd like to add as many languages as possible, we do need to limit the rate at which new languages are added. New languages will be selected according to community interest and the number of volunteers who sign up as translators.
