@@ -1,0 +1,10 @@
+name,site,location,rack,position,face,status,device_role,device_type,serial,asset_tag,description,comments,tags
+SMS-TEST-SG3K-001,SMS Pangyo,3F Test Lab,TEST-R01,25,front,staged,Security Appliance,SMS SecureGate SG-3000,SN-SG3K-2025001,TEST-001,테스트 제품 - SecureGate SG-3000 #001,고객사 A 납품 예정 (1주일 테스트 중),test;sg3000;short-term
+SMS-TEST-SG3K-002,SMS Pangyo,3F Test Lab,TEST-R01,24,front,staged,Security Appliance,SMS SecureGate SG-3000,SN-SG3K-2025002,TEST-002,테스트 제품 - SecureGate SG-3000 #002,고객사 B 납품 예정 (3일차),test;sg3000;short-term
+SMS-TEST-SG3K-003,SMS Pangyo,3F Test Lab,TEST-R01,23,front,planned,Security Appliance,SMS SecureGate SG-3000,SN-SG3K-2025003,TEST-003,테스트 제품 - SecureGate SG-3000 #003,고객사 C 납품 예정 (오늘 반입),test;sg3000;short-term
+SMS-TEST-SG5K-001,SMS Pangyo,4F Test Lab,TEST-R02,30,front,staged,Security Appliance,SMS SecureGate SG-5000,SN-SG5K-2025010,TEST-010,테스트 제품 - SecureGate SG-5000 #001,"대기업 X 납품 예정 (1개월 성능 테스트 중, 2주차)",test;sg5000;mid-term
+SMS-TEST-SG5K-002,SMS Pangyo,4F Test Lab,TEST-R02,28,front,staged,Security Appliance,SMS SecureGate SG-5000,SN-SG5K-2025011,TEST-011,테스트 제품 - SecureGate SG-5000 #002,대기업 Y 납품 예정 (안정성 테스트 3주차),test;sg5000;mid-term
+SMS-TEST-SG5K-003,SMS Pangyo,4F Test Lab,TEST-R02,26,front,staged,Security Appliance,SMS SecureGate SG-5000,SN-SG5K-2025012,TEST-012,테스트 제품 - SecureGate SG-5000 #003,정부기관 Z 납품 예정 (보안 인증 테스트 중),test;sg5000;mid-term;certification
+SMS-TEST-SG1K-001,SMS Pangyo,5F Test Lab,TEST-R03,20,front,staged,Security Appliance,SMS SecureGate SG-1000,SN-SG1K-2025020,TEST-020,테스트 제품 - SecureGate SG-1000 #001,"SMB 타겟 모델 장기 안정성 테스트 (3개월 - 현재 2개월 2주차)",test;sg1000;long-term
+SMS-TEST-SG1K-002,SMS Pangyo,5F Test Lab,TEST-R03,19,front,staged,Security Appliance,SMS SecureGate SG-1000,SN-SG1K-2025021,TEST-021,테스트 제품 - SecureGate SG-1000 #002,신규 펌웨어 베타 테스트 (장기 버그 추적 - 1개월차),test;sg1000;long-term;beta
+SMS-TEST-SG1K-003,SMS Pangyo,5F Test Lab,TEST-R03,18,front,staged,Security Appliance,SMS SecureGate SG-1000,SN-SG1K-2025022,TEST-022,테스트 제품 - SecureGate SG-1000 #003,호환성 테스트 - 다양한 네트워크 환경 (3개월 - 시작 1주차),test;sg1000;long-term;compatibility

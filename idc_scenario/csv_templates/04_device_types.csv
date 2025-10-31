@@ -1,0 +1,15 @@
+manufacturer,model,slug,part_number,u_height,is_full_depth,subdevice_role,airflow,weight,weight_unit,description,comments,tags
+Dell,PowerEdge R650,dell-poweredge-r650,210-BDRG,1,True,,front-to-rear,15.5,kg,2소켓 1U 랙 서버 - Intel Xeon 프로세서,"범용 엔터프라이즈 서버, 가상화 및 클라우드 워크로드",server;1u
+Dell,PowerEdge R750,dell-poweredge-r750,210-BDRH,2,True,,front-to-rear,29.0,kg,2소켓 2U 랙 서버 - 확장성 우수,"고성능 워크로드, 데이터베이스 및 AI",server;2u
+Dell,PowerEdge R450,dell-poweredge-r450,210-BDRJ,1,True,,front-to-rear,12.8,kg,1소켓 1U 소형 서버,"중소규모 환경, 원격 지사",server;1u
+HPE,ProLiant DL360 Gen10,hpe-dl360-gen10,P23578-B21,1,True,,front-to-rear,16.2,kg,2소켓 1U 범용 서버,"가상화, 웹, 애플리케이션 서버",server;1u
+HPE,ProLiant DL380 Gen10,hpe-dl380-gen10,P20174-B21,2,True,,front-to-rear,32.5,kg,2소켓 2U 엔터프라이즈 서버,"데이터베이스, 스토리지 집약적 워크로드",server;2u
+HPE,ProLiant DL20 Gen10,hpe-dl20-gen10,P17078-B21,1,False,,front-to-rear,11.5,kg,1소켓 1U 소형 서버,"소규모 환경, 엣지 컴퓨팅",server;1u
+Supermicro,SuperServer 1029P,supermicro-1029p,SYS-1029P-MTR,1,True,,front-to-rear,14.0,kg,2소켓 1U 고밀도 서버,"HPC, 빅데이터 분석",server;1u;hpc
+Supermicro,SuperServer 6029P,supermicro-6029p,SYS-6029P-TRT,2,True,,front-to-rear,28.0,kg,2소켓 2U 스토리지 서버,"대용량 스토리지, NAS",server;2u;storage
+Cisco,Catalyst 9300-48P,cisco-c9300-48p,C9300-48P-A,1,True,,front-to-rear,8.2,kg,48포트 PoE+ 스위치,"액세스 계층, PoE 지원",network;switch
+Cisco,Nexus 9300-FX2,cisco-n9k-c93180yc-fx2,N9K-C93180YC-FX2,1,True,,front-to-rear,9.5,kg,48x25G + 6x100G 스위치,"데이터센터 ToR, 고속 네트워킹",network;switch;datacenter
+Cisco,ASA 5516-X,cisco-asa5516-x,ASA5516-K9,1,False,,front-to-rear,7.5,kg,차세대 방화벽,"보안 경계, VPN 지원",security;firewall
+SMS,SecureGate SG-3000,sms-securegate-sg3000,SG-3000-STD,1,True,,front-to-rear,13.5,kg,통합 보안 어플라이언스 - 방화벽/IPS/VPN,"자체 제작 보안 제품, 중견기업용",security;product
+SMS,SecureGate SG-5000,sms-securegate-sg5000,SG-5000-ENT,2,True,,front-to-rear,22.0,kg,엔터프라이즈급 보안 어플라이언스,"대용량 트래픽 처리, 대기업용",security;product;enterprise
+SMS,SecureGate SG-1000,sms-securegate-sg1000,SG-1000-SMB,1,False,,front-to-rear,8.5,kg,중소기업용 보안 어플라이언스,"소규모 환경, 비용 효율적",security;product;smb

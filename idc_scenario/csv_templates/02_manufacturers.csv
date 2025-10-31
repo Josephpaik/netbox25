@@ -1,0 +1,8 @@
+name,slug,description,tags
+Dell,dell,Dell Technologies - 서버 및 스토리지 제조사,server;enterprise
+HPE,hpe,Hewlett Packard Enterprise - 엔터프라이즈 서버 제조사,server;enterprise
+Supermicro,supermicro,Super Micro Computer - 고성능 서버 제조사,server;high-performance
+Cisco,cisco,Cisco Systems - 네트워크 장비 제조사,network;enterprise
+Juniper,juniper,Juniper Networks - 네트워크 장비 제조사,network;enterprise
+Arista,arista,Arista Networks - 데이터센터 네트워크 장비,network;datacenter
+SMS,sms,SMS 자체 제작 보안 어플라이언스,security;custom

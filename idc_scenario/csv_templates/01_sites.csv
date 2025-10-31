@@ -1,0 +1,2 @@
+name,slug,status,region,facility,physical_address,shipping_address,latitude,longitude,description,comments,tags
+SMS Pangyo,sms-pangyo,active,,SMS HQ Building,"경기도 성남시 분당구 판교역로 166","경기도 성남시 분당구 판교역로 166",37.402056,127.109895,"SMS 사 본사 사옥 - 지하 4층, 지상 9층 건물",입주 6개월차 운영 중인 신축 사옥,production;hq
