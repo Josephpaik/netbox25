@@ -1,0 +1,29 @@
+address,vrf,status,role,dns_name,description,assigned_object_type,assigned_object_id,assigned_object,tags
+10.10.10.1/24,,active,gateway,,Management Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;management
+10.100.10.1/24,,active,gateway,,Web DMZ Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;web
+10.100.10.10/24,,active,,web01.sms.local,웹 서버 01 - 사내 포털,dcim.interface,,SMS-WEB01:eno2,production;web
+10.100.10.11/24,,active,,web02.sms.local,웹 서버 02 - 사내 포털,dcim.interface,,SMS-WEB02:eno2,production;web
+10.100.20.1/24,,active,gateway,,Web External Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;web
+10.100.20.10/24,,active,,web03.sms.local,웹 서버 03 - 고객 SaaS,dcim.interface,,SMS-WEB03:eno2,production;web;saas
+10.200.10.1/24,,active,gateway,,Application Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;app
+10.200.10.10/24,,active,,app01.sms.local,앱 서버 01 - 비즈니스 로직,dcim.interface,,SMS-APP01:eno2,production;app
+10.200.10.11/24,,active,,app02.sms.local,앱 서버 02 - 비즈니스 로직,dcim.interface,,SMS-APP02:eno2,production;app
+10.300.10.1/24,,active,gateway,,Database Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;database
+10.300.10.10/24,,active,,db01.sms.local,DB 서버 01 - Oracle RAC Node 1,dcim.interface,,SMS-DB01:eno2,production;database;oracle
+10.300.10.11/24,,active,,db02.sms.local,DB 서버 02 - Oracle RAC Node 2,dcim.interface,,SMS-DB02:eno2,production;database;oracle
+10.300.20.10/24,,active,,db01-priv.sms.local,DB 서버 01 - RAC Interconnect,dcim.interface,,SMS-DB01:eno3,private;rac
+10.300.20.11/24,,active,,db02-priv.sms.local,DB 서버 02 - RAC Interconnect,dcim.interface,,SMS-DB02:eno3,private;rac
+10.400.10.1/24,,active,gateway,,Mail Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;mail
+10.400.10.10/24,,active,,mail01.sms.local,메일 서버 01 - Exchange,dcim.interface,,SMS-MAIL01:eno2,production;mail
+10.500.10.1/24,,active,gateway,,Infrastructure Gateway,,,SMS-CR01:GigabitEthernet0/0/10,gateway;infrastructure
+10.500.10.10/24,,active,,ad01.sms.local,AD 서버 01 - Primary DC,dcim.interface,,SMS-AD01:eno2,production;ad;dc
+10.10.10.10/24,,reserved,,web01-mgmt.sms.local,웹 서버 01 - Management,dcim.interface,,SMS-WEB01:eno1,management;ipmi
+10.10.10.11/24,,reserved,,web02-mgmt.sms.local,웹 서버 02 - Management,dcim.interface,,SMS-WEB02:eno1,management;ipmi
+10.10.10.21/24,,reserved,,app01-mgmt.sms.local,앱 서버 01 - Management,dcim.interface,,SMS-APP01:eno1,management;ipmi
+10.10.10.31/24,,reserved,,db01-mgmt.sms.local,DB 서버 01 - Management,dcim.interface,,SMS-DB01:eno1,management;ipmi
+10.999.10.10/24,,active,,test-sg3k-001.test.sms.local,테스트 제품 SG-3000 #001,dcim.interface,,SMS-TEST-SG3K-001:eth0,test;temporary
+10.999.10.11/24,,active,,test-sg5k-001.test.sms.local,테스트 제품 SG-5000 #001,dcim.interface,,SMS-TEST-SG5K-001:eth0,test;temporary
+10.999.10.12/24,,active,,test-sg1k-001.test.sms.local,테스트 제품 SG-1000 #001,dcim.interface,,SMS-TEST-SG1K-001:eth0,test;temporary
+192.168.1.100/24,,active,,www.sms.co.kr,외부 웹 서비스 공인 IP,,,SMS-FW01:GigabitEthernet0/0,public;external
+192.168.1.101/24,,active,,mail.sms.co.kr,외부 메일 서비스 공인 IP,,,SMS-FW01:GigabitEthernet0/0,public;external
+192.168.1.102/24,,reserved,,vpn.sms.co.kr,VPN 접속용 공인 IP,,,SMS-FW01:GigabitEthernet0/0,public;vpn

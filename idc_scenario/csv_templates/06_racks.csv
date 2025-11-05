@@ -1,0 +1,16 @@
+site,location,name,status,role,type,width,u_height,desc_units,outer_width,outer_depth,outer_unit,weight,max_weight,weight_unit,description,comments,tags
+SMS Pangyo,B1F Datacenter,DC-R01,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 01 - 코어 네트워크 장비,코어 라우터 및 코어 스위치 전용,datacenter;network;core
+SMS Pangyo,B1F Datacenter,DC-R02,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 02 - 웹 서버 클러스터,웹 서버 8대 운영 중,datacenter;web
+SMS Pangyo,B1F Datacenter,DC-R03,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 03 - 애플리케이션 서버,앱 서버 및 미들웨어,datacenter;application
+SMS Pangyo,B1F Datacenter,DC-R04,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 04 - 데이터베이스 서버,DB 서버 클러스터 (Oracle/MySQL),datacenter;database
+SMS Pangyo,B1F Datacenter,DC-R05,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 05 - 스토리지 및 백업,NAS/SAN 스토리지 시스템,datacenter;storage
+SMS Pangyo,B1F Datacenter,DC-R06,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 06 - 보안 장비,방화벽 및 IPS/IDS,datacenter;security
+SMS Pangyo,B1F Datacenter,DC-R07,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 07 - 인프라 서버,AD/DNS/DHCP 등 인프라,datacenter;infrastructure
+SMS Pangyo,B1F Datacenter,DC-R08,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 08 - 개발 환경,개발/스테이징 서버,datacenter;dev
+SMS Pangyo,B1F Datacenter,DC-R09,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 09 - 모니터링,모니터링 및 로깅 시스템,datacenter;monitoring
+SMS Pangyo,B1F Datacenter,DC-R10,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 10 - 메일 시스템,메일 서버 및 스팸 필터,datacenter;mail
+SMS Pangyo,B1F Datacenter,DC-R11,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 11 - 가상화 호스트,VMware ESXi 호스트 서버,datacenter;virtualization
+SMS Pangyo,B1F Datacenter,DC-R12,active,,4-post-frame,19,42,False,600,1000,mm,150,1000,kg,데이터센터 랙 12 - 예비 공간,신규 서비스용 예비 랙,datacenter;spare
+SMS Pangyo,3F Test Lab,TEST-R01,planned,,2-post-frame,19,42,False,600,800,mm,100,800,kg,3층 테스트 랙 01 - 단기 테스트,1주일 단위 제품 테스트,test;short-term
+SMS Pangyo,4F Test Lab,TEST-R02,planned,,2-post-frame,19,42,False,600,800,mm,100,800,kg,4층 테스트 랙 02 - 중기 테스트,1개월 단위 제품 테스트,test;mid-term
+SMS Pangyo,5F Test Lab,TEST-R03,planned,,2-post-frame,19,42,False,600,800,mm,100,800,kg,5층 테스트 랙 03 - 장기 테스트,3개월 이상 장기 테스트,test;long-term

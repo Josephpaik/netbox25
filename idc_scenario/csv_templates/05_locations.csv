@@ -1,0 +1,7 @@
+site,name,slug,description,tags
+SMS Pangyo,B1F Datacenter,b1f-datacenter,"지하 1층 데이터센터 - 항온항습기, 화재경보기, 배터리실, 하론소화장비 완비",datacenter;production
+SMS Pangyo,3F Test Lab,3f-test-lab,3층 테스트 실험실 - 단기 제품 테스트 (1주일),test;lab
+SMS Pangyo,4F Test Lab,4f-test-lab,4층 테스트 실험실 - 중기 제품 테스트 (1개월),test;lab
+SMS Pangyo,5F Test Lab,5f-test-lab,5층 테스트 실험실 - 장기 제품 테스트 (3개월 이상),test;lab;longterm
+SMS Pangyo,B1F Battery Room,b1f-battery-room,지하 1층 배터리실 - UPS 배터리 보관,infrastructure;power
+SMS Pangyo,B1F Network Room,b1f-network-room,지하 1층 네트워크실 - 코어 네트워크 장비,infrastructure;network

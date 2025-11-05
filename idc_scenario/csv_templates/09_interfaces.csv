@@ -1,0 +1,43 @@
+device,name,type,enabled,mtu,mac_address,description,mode,tags
+SMS-CR01,GigabitEthernet0/0/1,1000base-t,True,1500,00:1A:2B:3C:4D:01,Uplink to ISP1 - KT,,,uplink;wan
+SMS-CR01,GigabitEthernet0/0/2,1000base-t,True,1500,00:1A:2B:3C:4D:02,Uplink to ISP2 - LG U+,,,uplink;wan
+SMS-CR01,GigabitEthernet0/0/10,10gbase-x-sfpp,True,9000,00:1A:2B:3C:4D:10,Core to Distribution - VLAN Trunk,,tagged,core;trunk
+SMS-CR02,GigabitEthernet0/0/1,1000base-t,True,1500,00:1A:2B:3C:5D:01,Uplink to ISP1 - KT (Standby),,,uplink;wan;standby
+SMS-CR02,GigabitEthernet0/0/2,1000base-t,True,1500,00:1A:2B:3C:5D:02,Uplink to ISP2 - LG U+ (Standby),,,uplink;wan;standby
+SMS-CR02,GigabitEthernet0/0/10,10gbase-x-sfpp,True,9000,00:1A:2B:3C:5D:10,Core to Distribution - VLAN Trunk,,tagged,core;trunk
+SMS-FW01,GigabitEthernet0/0,1000base-t,True,1500,00:1B:2C:3D:4E:01,Outside Interface - WAN,,,outside;wan
+SMS-FW01,GigabitEthernet0/1,1000base-t,True,1500,00:1B:2C:3D:4E:02,Inside Interface - DMZ,,access,inside;dmz
+SMS-FW01,GigabitEthernet0/2,1000base-t,True,1500,00:1B:2C:3D:4E:03,Inside Interface - LAN,,access,inside;lan
+SMS-FW02,GigabitEthernet0/0,1000base-t,True,1500,00:1B:2C:3D:5E:01,Outside Interface - WAN (Standby),,,outside;wan;standby
+SMS-FW02,GigabitEthernet0/1,1000base-t,True,1500,00:1B:2C:3D:5E:02,Inside Interface - DMZ (Standby),,access,inside;dmz;standby
+SMS-FW02,GigabitEthernet0/2,1000base-t,True,1500,00:1B:2C:3D:5E:03,Inside Interface - LAN (Standby),,access,inside;lan;standby
+SMS-WEB01,eno1,1000base-t,True,1500,AA:BB:CC:DD:01:01,Management Interface,,access,mgmt
+SMS-WEB01,eno2,1000base-t,True,1500,AA:BB:CC:DD:01:02,Production Interface - VLAN 100,,access,production
+SMS-WEB02,eno1,1000base-t,True,1500,AA:BB:CC:DD:02:01,Management Interface,,access,mgmt
+SMS-WEB02,eno2,1000base-t,True,1500,AA:BB:CC:DD:02:02,Production Interface - VLAN 100,,access,production
+SMS-WEB03,eno1,1000base-t,True,1500,AA:BB:CC:DD:03:01,Management Interface,,access,mgmt
+SMS-WEB03,eno2,1000base-t,True,1500,AA:BB:CC:DD:03:02,Production Interface - VLAN 110,,access,production
+SMS-APP01,eno1,1000base-t,True,1500,AA:BB:CC:DD:11:01,Management Interface,,access,mgmt
+SMS-APP01,eno2,1000base-t,True,9000,AA:BB:CC:DD:11:02,Production Interface - VLAN 200,,access,production
+SMS-APP02,eno1,1000base-t,True,1500,AA:BB:CC:DD:12:01,Management Interface,,access,mgmt
+SMS-APP02,eno2,1000base-t,True,9000,AA:BB:CC:DD:12:02,Production Interface - VLAN 200,,access,production
+SMS-DB01,eno1,1000base-t,True,1500,AA:BB:CC:DD:21:01,Management Interface,,access,mgmt
+SMS-DB01,eno2,10gbase-x-sfpp,True,9000,AA:BB:CC:DD:21:02,Production Interface - VLAN 300,,access,production
+SMS-DB01,eno3,10gbase-x-sfpp,True,9000,AA:BB:CC:DD:21:03,Private Interconnect for RAC,,access,private;rac
+SMS-DB02,eno1,1000base-t,True,1500,AA:BB:CC:DD:22:01,Management Interface,,access,mgmt
+SMS-DB02,eno2,10gbase-x-sfpp,True,9000,AA:BB:CC:DD:22:02,Production Interface - VLAN 300,,access,production
+SMS-DB02,eno3,10gbase-x-sfpp,True,9000,AA:BB:CC:DD:22:03,Private Interconnect for RAC,,access,private;rac
+SMS-MAIL01,eno1,1000base-t,True,1500,AA:BB:CC:DD:31:01,Management Interface,,access,mgmt
+SMS-MAIL01,eno2,1000base-t,True,1500,AA:BB:CC:DD:31:02,Production Interface - VLAN 400,,access,production
+SMS-AD01,eno1,1000base-t,True,1500,AA:BB:CC:DD:41:01,Management Interface,,access,mgmt
+SMS-AD01,eno2,1000base-t,True,1500,AA:BB:CC:DD:41:02,Production Interface - VLAN 500,,access,production
+SMS-TEST-SG3K-001,eth0,1000base-t,True,1500,BB:CC:DD:EE:01:01,Management Interface - Test,,access,test;mgmt
+SMS-TEST-SG3K-001,eth1,1000base-t,True,1500,BB:CC:DD:EE:01:02,WAN Interface - Test,,access,test;wan
+SMS-TEST-SG3K-001,eth2,1000base-t,True,1500,BB:CC:DD:EE:01:03,LAN Interface - Test,,access,test;lan
+SMS-TEST-SG5K-001,eth0,1000base-t,True,1500,BB:CC:DD:EE:11:01,Management Interface - Test,,access,test;mgmt
+SMS-TEST-SG5K-001,eth1,10gbase-x-sfpp,True,1500,BB:CC:DD:EE:11:02,WAN Interface - Test,,access,test;wan
+SMS-TEST-SG5K-001,eth2,10gbase-x-sfpp,True,1500,BB:CC:DD:EE:11:03,LAN Interface 1 - Test,,access,test;lan
+SMS-TEST-SG5K-001,eth3,10gbase-x-sfpp,True,1500,BB:CC:DD:EE:11:04,LAN Interface 2 - Test,,access,test;lan
+SMS-TEST-SG1K-001,eth0,1000base-t,True,1500,BB:CC:DD:EE:21:01,Management Interface - Test,,access,test;mgmt
+SMS-TEST-SG1K-001,eth1,1000base-t,True,1500,BB:CC:DD:EE:21:02,WAN Interface - Test,,access,test;wan
+SMS-TEST-SG1K-001,eth2,1000base-t,True,1500,BB:CC:DD:EE:21:03,LAN Interface - Test,,access,test;lan

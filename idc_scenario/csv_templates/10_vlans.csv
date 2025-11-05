@@ -1,0 +1,14 @@
+site,group,vid,name,status,description,tags
+SMS Pangyo,,10,Management,active,관리 네트워크 - IPMI/iLO/iDRAC,management;infrastructure
+SMS Pangyo,,100,Web-DMZ,active,웹 서버 DMZ - 사내 포털,web;dmz;production
+SMS Pangyo,,110,Web-External,active,웹 서버 외부 - 고객 SaaS,web;external;production
+SMS Pangyo,,200,Application,active,애플리케이션 서버 네트워크,app;production
+SMS Pangyo,,300,Database,active,데이터베이스 서버 네트워크,database;production
+SMS Pangyo,,310,DB-Private,active,데이터베이스 Private 네트워크 (RAC),database;private
+SMS Pangyo,,400,Mail,active,메일 서버 네트워크,mail;production
+SMS Pangyo,,500,Infrastructure,active,인프라 서버 네트워크 (AD/DNS/DHCP),infrastructure;production
+SMS Pangyo,,600,Storage,active,스토리지 네트워크 (NAS/SAN),storage;production
+SMS Pangyo,,700,Backup,active,백업 네트워크,backup;production
+SMS Pangyo,,800,Monitoring,active,모니터링 네트워크 (Zabbix/ELK),monitoring;production
+SMS Pangyo,,900,Development,active,개발/스테이징 네트워크,development;staging
+SMS Pangyo,,999,Test,active,테스트 네트워크 (제품 테스트용),test;temporary

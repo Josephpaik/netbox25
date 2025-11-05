@@ -1,0 +1,30 @@
+name,site,location,rack,position,face,status,device_role,device_type,serial,asset_tag,description,comments,tags
+SMS-CR01,SMS Pangyo,B1F Datacenter,DC-R01,40,front,active,Core Router,Cisco Nexus 9300-FX2,SN-CR01-2024001,ASSET-001,코어 라우터 1호기 - Primary,"IDC 메인 라우터, BGP 운영",core;router;primary
+SMS-CR02,SMS Pangyo,B1F Datacenter,DC-R01,38,front,active,Core Router,Cisco Nexus 9300-FX2,SN-CR02-2024002,ASSET-002,코어 라우터 2호기 - Standby,"IDC 백업 라우터, VRRP 구성",core;router;standby
+SMS-FW01,SMS Pangyo,B1F Datacenter,DC-R06,40,front,active,Firewall,Cisco ASA 5516-X,SN-FW01-2024010,ASSET-010,방화벽 1호기 - Active,"외부 구간 방화벽, Active",security;firewall;active
+SMS-FW02,SMS Pangyo,B1F Datacenter,DC-R06,38,front,active,Firewall,Cisco ASA 5516-X,SN-FW02-2024011,ASSET-011,방화벽 2호기 - Standby,"외부 구간 방화벽, Standby",security;firewall;standby
+SMS-WEB01,SMS Pangyo,B1F Datacenter,DC-R02,35,front,active,Web Server,Dell PowerEdge R650,SN-WEB01-2024020,ASSET-020,웹 서버 01 - 사내 포털,"사내 인트라넷 포털, Nginx",web;production
+SMS-WEB02,SMS Pangyo,B1F Datacenter,DC-R02,34,front,active,Web Server,Dell PowerEdge R650,SN-WEB02-2024021,ASSET-021,웹 서버 02 - 사내 포털,"사내 인트라넷 포털, Nginx",web;production
+SMS-WEB03,SMS Pangyo,B1F Datacenter,DC-R02,33,front,active,Web Server,Dell PowerEdge R650,SN-WEB03-2024022,ASSET-022,웹 서버 03 - 고객 SaaS,"고객사 SaaS 플랫폼, Apache",web;production;saas
+SMS-WEB04,SMS Pangyo,B1F Datacenter,DC-R02,32,front,active,Web Server,Dell PowerEdge R650,SN-WEB04-2024023,ASSET-023,웹 서버 04 - 고객 SaaS,"고객사 SaaS 플랫폼, Apache",web;production;saas
+SMS-APP01,SMS Pangyo,B1F Datacenter,DC-R03,35,front,active,Application Server,Dell PowerEdge R750,SN-APP01-2024030,ASSET-030,앱 서버 01 - 비즈니스 로직,"Java Spring Boot, 8GB Heap",app;production
+SMS-APP02,SMS Pangyo,B1F Datacenter,DC-R03,33,front,active,Application Server,Dell PowerEdge R750,SN-APP02-2024031,ASSET-031,앱 서버 02 - 비즈니스 로직,"Java Spring Boot, 8GB Heap",app;production
+SMS-APP03,SMS Pangyo,B1F Datacenter,DC-R03,31,front,active,Application Server,Dell PowerEdge R750,SN-APP03-2024032,ASSET-032,앱 서버 03 - API Gateway,"Kong API Gateway, 4GB Heap",app;production;api
+SMS-DB01,SMS Pangyo,B1F Datacenter,DC-R04,40,front,active,Database Server,HPE ProLiant DL380 Gen10,SN-DB01-2024040,ASSET-040,데이터베이스 서버 01 - Oracle,"Oracle 19c RAC Node 1, 128GB RAM",database;production;oracle
+SMS-DB02,SMS Pangyo,B1F Datacenter,DC-R04,38,front,active,Database Server,HPE ProLiant DL380 Gen10,SN-DB02-2024041,ASSET-041,데이터베이스 서버 02 - Oracle,"Oracle 19c RAC Node 2, 128GB RAM",database;production;oracle
+SMS-DB03,SMS Pangyo,B1F Datacenter,DC-R04,36,front,active,Database Server,HPE ProLiant DL380 Gen10,SN-DB03-2024042,ASSET-042,데이터베이스 서버 03 - MySQL,"MySQL 8.0 Master, 64GB RAM",database;production;mysql
+SMS-DB04,SMS Pangyo,B1F Datacenter,DC-R04,34,front,active,Database Server,Dell PowerEdge R750,SN-DB04-2024043,ASSET-043,데이터베이스 서버 04 - MySQL,"MySQL 8.0 Slave, 64GB RAM",database;production;mysql
+SMS-FS01,SMS Pangyo,B1F Datacenter,DC-R05,35,front,active,File Server,Supermicro SuperServer 6029P,SN-FS01-2024050,ASSET-050,파일 서버 01 - NAS,"Samba 파일 서버, 32TB",storage;production;nas
+SMS-FS02,SMS Pangyo,B1F Datacenter,DC-R05,33,front,active,File Server,Supermicro SuperServer 6029P,SN-FS02-2024051,ASSET-051,파일 서버 02 - 백업,"백업 스토리지, 48TB",storage;backup
+SMS-MAIL01,SMS Pangyo,B1F Datacenter,DC-R10,35,front,active,Mail Server,Dell PowerEdge R450,SN-MAIL01-2024060,ASSET-060,메일 서버 01 - Exchange,"MS Exchange 2019, 32GB RAM",mail;production
+SMS-MAIL02,SMS Pangyo,B1F Datacenter,DC-R10,34,front,active,Mail Server,Dell PowerEdge R450,SN-MAIL02-2024061,ASSET-061,메일 서버 02 - Relay,"SMTP Relay, 16GB RAM",mail;production
+SMS-AD01,SMS Pangyo,B1F Datacenter,DC-R07,35,front,active,AD Server,HPE ProLiant DL360 Gen10,SN-AD01-2024070,ASSET-070,Active Directory 01 - Primary DC,"Windows Server 2022 DC1, 32GB RAM",infrastructure;ad;dc
+SMS-AD02,SMS Pangyo,B1F Datacenter,DC-R07,34,front,active,AD Server,HPE ProLiant DL360 Gen10,SN-AD02-2024071,ASSET-071,Active Directory 02 - Secondary DC,"Windows Server 2022 DC2, 32GB RAM",infrastructure;ad;dc
+SMS-DNS01,SMS Pangyo,B1F Datacenter,DC-R07,33,front,active,DNS Server,Dell PowerEdge R450,SN-DNS01-2024075,ASSET-075,DNS 서버 01 - Bind9,"내부 DNS, 8GB RAM",infrastructure;dns
+SMS-MON01,SMS Pangyo,B1F Datacenter,DC-R09,35,front,active,Monitoring Server,Dell PowerEdge R650,SN-MON01-2024080,ASSET-080,모니터링 서버 - Zabbix,"Zabbix 6.4, 32GB RAM",monitoring;production
+SMS-MON02,SMS Pangyo,B1F Datacenter,DC-R09,34,front,active,Monitoring Server,Dell PowerEdge R650,SN-MON02-2024081,ASSET-081,로그 서버 - ELK,"Elasticsearch + Kibana, 64GB RAM",monitoring;logging
+SMS-DEV01,SMS Pangyo,B1F Datacenter,DC-R08,35,front,active,Application Server,Dell PowerEdge R650,SN-DEV01-2024090,ASSET-090,개발 서버 01 - Dev Environment,"개발용, Docker Swarm",development;docker
+SMS-DEV02,SMS Pangyo,B1F Datacenter,DC-R08,34,front,active,Application Server,Dell PowerEdge R650,SN-DEV02-2024091,ASSET-091,스테이징 서버 - Staging Environment,"검증용, K8s 클러스터",staging;kubernetes
+SMS-VM01,SMS Pangyo,B1F Datacenter,DC-R11,40,front,active,Application Server,HPE ProLiant DL380 Gen10,SN-VM01-2024100,ASSET-100,가상화 호스트 01 - ESXi,"VMware ESXi 7.0, 256GB RAM",virtualization;esxi
+SMS-VM02,SMS Pangyo,B1F Datacenter,DC-R11,38,front,active,Application Server,HPE ProLiant DL380 Gen10,SN-VM02-2024101,ASSET-101,가상화 호스트 02 - ESXi,"VMware ESXi 7.0, 256GB RAM",virtualization;esxi
+SMS-VM03,SMS Pangyo,B1F Datacenter,DC-R11,36,front,active,Application Server,HPE ProLiant DL380 Gen10,SN-VM03-2024102,ASSET-102,가상화 호스트 03 - ESXi,"VMware ESXi 7.0, 256GB RAM",virtualization;esxi

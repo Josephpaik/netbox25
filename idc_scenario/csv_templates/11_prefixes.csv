@@ -1,0 +1,16 @@
+prefix,site,vlan,status,role,is_pool,description,tags
+10.10.10.0/24,SMS Pangyo,10,active,,True,관리 네트워크 대역 (IPMI/iLO),management
+10.100.10.0/24,SMS Pangyo,100,active,,True,웹 서버 DMZ 대역 (사내 포털),web;dmz
+10.100.20.0/24,SMS Pangyo,110,active,,True,웹 서버 외부 대역 (고객 SaaS),web;external
+10.200.10.0/24,SMS Pangyo,200,active,,True,애플리케이션 서버 대역,app
+10.200.20.0/24,SMS Pangyo,200,active,,False,애플리케이션 서버 대역 (추가),app
+10.300.10.0/24,SMS Pangyo,300,active,,True,데이터베이스 서버 대역,database
+10.300.20.0/24,SMS Pangyo,310,active,,True,데이터베이스 Private 대역 (RAC Interconnect),database;private
+10.400.10.0/24,SMS Pangyo,400,active,,True,메일 서버 대역,mail
+10.500.10.0/24,SMS Pangyo,500,active,,True,인프라 서버 대역 (AD/DNS/DHCP),infrastructure
+10.600.10.0/24,SMS Pangyo,600,active,,True,스토리지 대역 (NAS/SAN),storage
+10.700.10.0/24,SMS Pangyo,700,active,,True,백업 대역,backup
+10.800.10.0/24,SMS Pangyo,800,active,,True,모니터링 대역 (Zabbix/ELK),monitoring
+10.900.10.0/24,SMS Pangyo,900,active,,True,개발/스테이징 대역,development
+10.999.10.0/24,SMS Pangyo,999,active,,True,테스트 대역 (제품 테스트용),test
+192.168.1.0/24,SMS Pangyo,,active,,False,공인 IP 대역 (외부 서비스용),public;external

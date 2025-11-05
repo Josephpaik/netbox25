@@ -1,0 +1,16 @@
+name,slug,color,vm_role,description,tags
+Core Router,core-router,aa1409,False,코어 라우터 - 주요 네트워크 라우팅,network;core
+Distribution Switch,dist-switch,f44336,False,분배 스위치 - VLAN 및 라우팅,network;distribution
+Access Switch,access-switch,ff9800,False,액세스 스위치 - 엔드포인트 연결,network;access
+Firewall,firewall,e91e63,False,방화벽 - 보안 경계,security;firewall
+Load Balancer,load-balancer,9c27b0,False,로드 밸런서 - 트래픽 분산,network;lb
+Web Server,web-server,2196f3,True,웹 서버 - HTTP/HTTPS 서비스,server;web
+Application Server,app-server,03a9f4,True,애플리케이션 서버 - 비즈니스 로직,server;app
+Database Server,db-server,00bcd4,True,데이터베이스 서버 - 데이터 저장,server;database
+File Server,file-server,009688,True,파일 서버 - 파일 저장 및 공유,server;storage
+Mail Server,mail-server,4caf50,True,메일 서버 - 이메일 서비스,server;mail
+DNS Server,dns-server,8bc34a,True,DNS 서버 - 도메인 네임 시스템,server;dns
+AD Server,ad-server,cddc39,True,Active Directory 서버 - 인증 및 디렉터리,server;ad
+Monitoring Server,monitoring-server,ffc107,True,모니터링 서버 - 시스템 감시,server;monitoring
+Security Appliance,security-appliance,ff5722,False,보안 어플라이언스 - 납품용 제품,security;product
+Test Device,test-device,9e9e9e,False,테스트 장비 - 출하 전 검증,test;temporary
