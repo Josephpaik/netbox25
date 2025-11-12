@@ -216,8 +216,8 @@ REDIS = {
 
 # 한국어 인터페이스 활성화 (선택사항)
 # 아래 주석 해제:
-# LANGUAGE_CODE = 'ko-kr'
-# TIME_ZONE = 'Asia/Seoul'
+LANGUAGE_CODE = 'ko-kr'
+TIME_ZONE = 'Asia/Seoul'
 ```
 
 **SECRET_KEY 생성 명령어**:
@@ -260,10 +260,10 @@ python netbox/manage.py createsuperuser
 # Password (again): (비밀번호 재입력)
 ```
 
-**권장 계정 정보**:
+**테스트 계정 정보 설정**:
 - Username: `admin`
-- Email: `admin@localhost.com`
-- Password: `admin123!` (실제 운영 환경에서는 강력한 비밀번호 사용)
+- Email: `wk.paik@somansa.com`
+- Password: `admin1234!` (실제 운영 환경에서는 강력한 비밀번호 사용)
 
 ### 4.3 정적 파일 수집
 
