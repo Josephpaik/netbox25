@@ -128,7 +128,7 @@ psql postgres
 CREATE DATABASE netbox;
 
 -- NetBox 전용 사용자 생성
-CREATE USER netbox WITH PASSWORD 'netbox123';
+CREATE USER netbox WITH PASSWORD 'Netbox25&';
 
 -- 권한 부여
 ALTER DATABASE netbox OWNER TO netbox;
@@ -191,7 +191,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 DATABASE = {
     'NAME': 'netbox',               # PostgreSQL 데이터베이스 이름
     'USER': 'netbox',               # PostgreSQL 사용자
-    'PASSWORD': 'netbox123',        # PostgreSQL 비밀번호
+    'PASSWORD': 'Netbox25&',        # PostgreSQL 비밀번호
     'HOST': 'localhost',            # PostgreSQL 호스트
     'PORT': '',                     # PostgreSQL 포트 (기본값 사용)
     'CONN_MAX_AGE': 300,
@@ -254,16 +254,16 @@ python netbox/manage.py migrate
 python netbox/manage.py createsuperuser
 
 # 프롬프트에서 입력:
-# Username: admin
-# Email address: admin@example.com
+# Username: netboxadmin
+# Email address: netboxadmin@somansa.com
 # Password: (비밀번호 입력 - 화면에 표시되지 않음)
 # Password (again): (비밀번호 재입력)
 ```
 
 **권장 계정 정보**:
-- Username: `admin`
-- Email: `admin@localhost.com`
-- Password: `admin123!` (실제 운영 환경에서는 강력한 비밀번호 사용)
+- Username: `netboxadmin`
+- Email: `netboxadmin@somansa.com`
+- Password: `Netbox25&` (실제 운영 환경에서는 강력한 비밀번호 사용)
 
 ### 4.3 정적 파일 수집
 
@@ -301,7 +301,7 @@ python netbox/manage.py runserver
    ```
 
 2. **로그인**:
-   - Username: `admin`
+   - Username: `netboxadmin`
    - Password: (생성한 비밀번호)
 
 3. **NetBox 대시보드 확인**:
