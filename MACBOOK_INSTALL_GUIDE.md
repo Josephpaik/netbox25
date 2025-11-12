@@ -165,6 +165,36 @@ pip install -r requirements.txt
 pip list | grep Django
 ```
 
+**SSL 인증서 오류가 발생하는 경우**:
+
+회사 또는 연구소 네트워크에서 사용자 정의 CA 인증서로 인해 다음과 같은 오류가 발생할 수 있습니다:
+
+```
+SSLError(SSLCertVerificationError('"mirror-lab-imCA" certificate is not trusted'))
+```
+
+이 경우 `SSL_CERTIFICATE_TROUBLESHOOTING.md` 파일을 참조하여 문제를 해결하세요.
+
+**빠른 해결 방법** (테스트 환경용):
+```bash
+pip install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org
+```
+
+**영구적인 해결 방법**:
+```bash
+mkdir -p ~/.pip
+cat > ~/.pip/pip.conf << 'EOF'
+[global]
+trusted-host = pypi.org
+               files.pythonhosted.org
+               pypi.python.org
+EOF
+
+pip install -r requirements.txt
+```
+
+자세한 내용과 다른 해결 방법은 `SSL_CERTIFICATE_TROUBLESHOOTING.md`를 참조하세요.
+
 ### 3.4 NetBox 설정 파일 생성
 
 ```bash
@@ -430,7 +460,44 @@ NetBox에 SMS사 판교 사옥 IDC 시뮬레이션 데이터를 업로드합니�
 
 ## 7. 문제 해결
 
-### 7.1 PostgreSQL 연결 오류
+### 7.1 SSL 인증서 오류
+
+**증상**:
+```
+SSLError(SSLCertVerificationError('"mirror-lab-imCA" certificate is not trusted'))
+WARNING: Retrying after connection broken by 'SSLError'
+Could not fetch URL https://pypi.org/simple/
+```
+
+**원인**: 회사 또는 연구소 네트워크에서 사용자 정의 Certificate Authority (CA)를 사용하는 경우, Python의 pip가 해당 CA를 신뢰하지 않아 발생합니다.
+
+**해결**:
+
+1. **빠른 해결 (테스트 환경)**:
+   ```bash
+   pip install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org
+   ```
+
+2. **영구적 해결**:
+   ```bash
+   mkdir -p ~/.pip
+   cat > ~/.pip/pip.conf << 'EOF'
+   [global]
+   trusted-host = pypi.org
+                  files.pythonhosted.org
+                  pypi.python.org
+   EOF
+
+   pip install -r requirements.txt
+   ```
+
+3. **자세한 해결 방법**: `SSL_CERTIFICATE_TROUBLESHOOTING.md` 파일 참조
+   - 사용자 정의 CA 인증서 설정
+   - 시스템 전체 CA 설치
+   - 내부 PyPI 미러 사용
+   - 기타 고급 설정
+
+### 7.2 PostgreSQL 연결 오류
 
 **증상**:
 ```
@@ -450,7 +517,7 @@ psql -U netbox -d netbox -h localhost
 # 비밀번호: netbox123
 ```
 
-### 7.2 Redis 연결 오류
+### 7.3 Redis 연결 오류
 
 **증상**:
 ```
@@ -470,7 +537,7 @@ redis-cli ping
 # 응답: PONG
 ```
 
-### 7.3 SECRET_KEY 오류
+### 7.4 SECRET_KEY 오류
 
 **증상**:
 ```
@@ -485,7 +552,7 @@ python3 -c "from django.core.management.utils import get_random_secret_key; prin
 # 출력된 키를 netbox/netbox/configuration.py의 SECRET_KEY에 붙여넣기
 ```
 
-### 7.4 Static 파일 404 오류
+### 7.5 Static 파일 404 오류
 
 **증상**: 웹페이지는 뜨지만 CSS가 적용되지 않음
 
@@ -495,7 +562,7 @@ python3 -c "from django.core.management.utils import get_random_secret_key; prin
 python netbox/manage.py collectstatic --clear --no-input
 ```
 
-### 7.5 Migration 오류
+### 7.6 Migration 오류
 
 **증상**:
 ```
@@ -515,7 +582,7 @@ ALTER DATABASE netbox OWNER TO netbox;
 python netbox/manage.py migrate
 ```
 
-### 7.6 CSV Import 오류
+### 7.7 CSV Import 오류
 
 **증상**: "Foreign key constraint failed" 또는 "Object not found"
 
@@ -523,7 +590,7 @@ python netbox/manage.py migrate
 - CSV 파일을 **반드시 순서대로** 업로드하세요 (01 → 02 → ... → 12)
 - Sites, Manufacturers를 먼저 생성하지 않으면 Device 생성 시 오류 발생
 
-### 7.7 포트 충돌 오류
+### 7.8 포트 충돌 오류
 
 **증상**:
 ```

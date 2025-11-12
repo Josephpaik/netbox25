@@ -163,11 +163,50 @@ echo "Step 8: Python 패키지 설치"
 echo "-----------------------------------"
 
 info "pip 업그레이드 중..."
-pip install --upgrade pip --quiet
+pip install --upgrade pip --quiet 2>/dev/null || {
+    warning "pip 업그레이드 실패. SSL 인증서 문제가 있을 수 있습니다."
+}
 
 info "NetBox 의존성 설치 중 (몇 분 소요될 수 있습니다)..."
-pip install -r requirements.txt --quiet
-success "Python 패키지 설치 완료"
+
+# 먼저 일반 설치 시도
+if ! pip install -r requirements.txt --quiet 2>/dev/null; then
+    warning "일반 설치 실패. SSL 인증서 오류가 감지되었습니다."
+    echo ""
+    echo "SSL 인증서 문제로 인해 설치가 실패했습니다."
+    echo "신뢰할 수 있는 호스트를 사용하여 재시도합니다..."
+    echo ""
+
+    # trusted-host 플래그로 재시도
+    info "신뢰할 수 있는 호스트로 재설치 중..."
+    if pip install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org; then
+        success "Python 패키지 설치 완료 (trusted-host 사용)"
+        echo ""
+        warning "참고: SSL 인증서 검증을 우회하여 설치했습니다."
+        echo "      보안을 위해 SSL_CERTIFICATE_TROUBLESHOOTING.md를 참조하여"
+        echo "      올바른 CA 인증서를 설정하는 것을 권장합니다."
+        echo ""
+
+        # pip 설정 파일 생성 제안
+        echo "향후 설치를 위해 pip 설정 파일을 생성하시겠습니까? (y/N)"
+        read -r response
+        if [[ "$response" =~ ^[Yy]$ ]]; then
+            mkdir -p ~/.pip
+            cat > ~/.pip/pip.conf << 'EOF'
+[global]
+trusted-host = pypi.org
+               files.pythonhosted.org
+               pypi.python.org
+EOF
+            success "~/.pip/pip.conf 파일이 생성되었습니다."
+            echo "이제 향후 pip 설치 시 SSL 오류가 발생하지 않습니다."
+        fi
+    else
+        error "패키지 설치 실패. SSL_CERTIFICATE_TROUBLESHOOTING.md를 참조하세요."
+    fi
+else
+    success "Python 패키지 설치 완료"
+fi
 
 # 9. NetBox 설정 파일 생성
 echo ""
@@ -245,5 +284,7 @@ echo "테스트 데이터 업로드 가이드:"
 echo "  - MACBOOK_INSTALL_GUIDE.md의 'Step 6: 테스트 데이터 업로드' 참조"
 echo "  - idc_scenario/README.md 참조"
 echo ""
-echo "문제가 발생하면 MACBOOK_INSTALL_GUIDE.md의 '문제 해결' 섹션을 참조하세요."
+echo "문제 해결 가이드:"
+echo "  - MACBOOK_INSTALL_GUIDE.md의 '문제 해결' 섹션"
+echo "  - SSL_CERTIFICATE_TROUBLESHOOTING.md (SSL 인증서 오류 시)"
 echo ""
