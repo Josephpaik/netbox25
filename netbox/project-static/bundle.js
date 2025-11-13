@@ -94,10 +94,29 @@ async function bundleNetBox() {
 }
 
 /**
+ * Copy standalone JavaScript files that don't need bundling.
+ */
+async function copyStandaloneScripts() {
+  const fileMap = [
+    {
+      source: './js/setmode.js',
+      dest: './dist/setmode.js'
+    }
+  ];
+
+  try {
+    await copyFiles(fileMap);
+    console.log('✅ Copied standalone script files');
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+/**
  * Run script bundle jobs.
  */
 async function bundleScripts() {
-  for (const bundle of [bundleNetBox, bundleGraphIQL]) {
+  for (const bundle of [bundleNetBox, bundleGraphIQL, copyStandaloneScripts]) {
     await bundle();
   }
 }
