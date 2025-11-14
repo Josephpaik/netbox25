@@ -159,7 +159,7 @@ DROP USER IF EXISTS netbox;
 CREATE DATABASE netbox ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8';
 
 -- 사용자 생성
-CREATE USER netbox WITH PASSWORD 'netbox123';
+CREATE USER netbox WITH PASSWORD 'netbox1234!';
 
 -- 데이터베이스 소유권 부여
 ALTER DATABASE netbox OWNER TO netbox;
@@ -176,7 +176,7 @@ fi
 
 # 데이터베이스 연결 테스트
 info "데이터베이스 연결 테스트 중..."
-if PGPASSWORD=netbox123 psql -h localhost -U netbox -d netbox -c "SELECT version();" > /dev/null 2>&1; then
+if PGPASSWORD=netbox1234! psql -h localhost -U netbox -d netbox -c "SELECT version();" > /dev/null 2>&1; then
     success "데이터베이스 연결 성공"
 else
     error "데이터베이스 연결 실패. PostgreSQL 설정을 확인하세요."
@@ -243,7 +243,7 @@ else
         sed -i '' "s/SECRET_KEY = ''/SECRET_KEY = '$NEW_SECRET_KEY'/" "${CONFIG_FILE}"
         sed -i '' "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']/" "${CONFIG_FILE}"
         sed -i '' "s/'USER': ''/'USER': 'netbox'/" "${CONFIG_FILE}"
-        sed -i '' "s/'PASSWORD': ''/'PASSWORD': 'netbox123'/" "${CONFIG_FILE}"
+        sed -i '' "s/'PASSWORD': ''/'PASSWORD': 'netbox1234!'/" "${CONFIG_FILE}"
         sed -i '' "s/DEBUG = False/DEBUG = True/" "${CONFIG_FILE}"
 
         success "설정 파일 생성 완료"
@@ -283,13 +283,13 @@ header "Step 11: 관리자 계정 생성"
 info "기본 관리자 계정 생성 중..."
 export DJANGO_SUPERUSER_USERNAME=admin
 export DJANGO_SUPERUSER_EMAIL=admin@localhost.com
-export DJANGO_SUPERUSER_PASSWORD=admin123
+export DJANGO_SUPERUSER_PASSWORD=admin1234!
 
 if python "${NETBOX_DIR}/manage.py" createsuperuser --noinput 2>/dev/null; then
     success "관리자 계정 생성 완료"
     info "  Username: admin"
     info "  Email: admin@localhost.com"
-    info "  Password: admin123"
+    info "  Password: admin1234!"
 else
     warning "관리자 계정이 이미 존재합니다."
     info "  기존 계정을 사용하세요."
@@ -357,7 +357,7 @@ echo ""
 echo "3. 로그인 정보:"
 echo ""
 echo -e "   Username: ${GREEN}admin${NC}"
-echo -e "   Password: ${GREEN}admin123${NC}"
+echo -e "   Password: ${GREEN}admin1234!${NC}"
 echo ""
 echo -e "${BLUE}======================================"
 echo "추가 옵션"
