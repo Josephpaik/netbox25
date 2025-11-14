@@ -11,6 +11,8 @@ DATABASES = {
         'NAME': 'netbox',
         'USER': 'netbox',
         'PASSWORD': 'netbox1234!',
+        'POSTGRES_USER': 'root',
+        'POSTGRES_PASSWORD': 'netbox1234!',
         'HOST': 'localhost',
         'PORT': '',
         'CONN_MAX_AGE': 300,
