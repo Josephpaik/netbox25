@@ -6,11 +6,94 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 NetBox is a Django-based web application for network infrastructure management (IPAM/DCIM). It serves as the source of truth for network infrastructure, providing a comprehensive and inter-linked data model for network primitives like devices, racks, cables, IP addresses, VLANs, circuits, power distribution, VPNs, and more.
 
-**Tech Stack**: Python 3.10+, Django 5.2, PostgreSQL, Redis, Django REST Framework, Strawberry GraphQL, TypeScript, Vue.js
+**Tech Stack**: Python 3.10+ (supports 3.10, 3.11, 3.12), Django 5.2.7, PostgreSQL, Redis, Django REST Framework 3.16.1, Strawberry GraphQL 0.283.3, TypeScript, Vue.js
+
+**NetBox Version**: 4.4.4
+
+## Repository-Specific Features
+
+This repository (Josephpaik/netbox25) is a fork of the official NetBox repository with additional features:
+
+### 1. Korean Localization (한글화)
+- **Korean interface translations** in `netbox/translations/`
+- Korean documentation files:
+  - `QUICKSTART_CHECKLIST.md` - Korean installation and setup checklist
+  - `MACBOOK_INSTALL_GUIDE.md` - Detailed macOS installation guide in Korean
+- Korean language support enabled by default in the interface
+- Account details and menu items translated to Korean
+
+### 2. IDC Scenario Simulation
+Located in `idc_scenario/` directory, this feature provides:
+- **Realistic test data** for a data center scenario (SMS Pangyo facility)
+- **12 CSV templates** for sequential data import:
+  1. Sites (사이트)
+  2. Manufacturers (제조사)
+  3. Device Roles (장비 역할)
+  4. Device Types (장비 모델)
+  5. Locations (위치/층)
+  6. Racks (랙/캐비넷)
+  7. Devices - Datacenter (데이터센터 서버 ~60대)
+  8. Devices - Test products (테스트 제품)
+  9. Interfaces (네트워크 인터페이스)
+  10. VLANs
+  11. Prefixes (IP 대역)
+  12. IP Addresses (IP 주소)
+- **Complete documentation**:
+  - `idc_scenario/README.md` - Overview and import/export guide
+  - `idc_scenario/SUMMARY.md` - Scenario summary
+  - `idc_scenario/USAGE_GUIDE.md` - Detailed usage guide
+- **Python upload script**: `idc_scenario/upload_script.py` for automated bulk import
+
+### 3. Automated Setup Scripts
+- **`setup_macos.sh`**: Automated installation script for macOS
+  - Installs Homebrew, Python 3.11, PostgreSQL, Redis
+  - Creates and configures NetBox database
+  - Sets up Python virtual environment
+  - Configures NetBox settings automatically
+  - Creates superuser and collects static files
+  - One-command setup for development environment
+
+- **`setup_rocky.sh`**: Automated installation script for Rocky Linux
+  - Similar functionality for Rocky Linux/RHEL-based systems
+  - Production-ready configuration
+  - Includes firewall and SELinux configuration
+
+### 4. Additional Documentation
+- Comprehensive Korean guides for non-English users
+- Step-by-step checklists for installation and data population
+- Real-world IDC scenario for learning and testing
 
 ## Development Commands
 
-### Initial Setup
+### Quick Start (Automated Setup)
+
+For the fastest setup, use the automated installation scripts:
+
+#### macOS
+```bash
+# One-command automated setup
+./setup_macos.sh
+
+# After installation completes:
+source venv/bin/activate
+python netbox/manage.py runserver
+
+# Access at http://localhost:8000/
+# Default credentials: admin / admin123
+```
+
+#### Rocky Linux / RHEL
+```bash
+# Automated setup for production
+sudo ./setup_rocky.sh
+
+# Start services
+sudo systemctl start netbox netbox-rq
+```
+
+See `MACBOOK_INSTALL_GUIDE.md` (Korean) or `QUICKSTART_CHECKLIST.md` for detailed installation steps.
+
+### Initial Setup (Manual)
 ```bash
 # Install Python dependencies
 pip install -r requirements.txt
@@ -112,6 +195,45 @@ python netbox/manage.py calculate_cached_counts
 # Trace cable paths
 python netbox/manage.py trace_paths
 ```
+
+### IDC Scenario Data Import
+
+This repository includes realistic test data for a data center scenario. To populate NetBox with this test data:
+
+#### Option 1: Web UI Import (Recommended for learning)
+```bash
+# 1. Start NetBox
+python netbox/manage.py runserver
+
+# 2. Login to http://localhost:8000/ (admin / admin123)
+
+# 3. Import CSV files in order via Web UI:
+#    DCIM > Sites > Import -> upload idc_scenario/csv_templates/01_sites.csv
+#    DCIM > Device Types > Manufacturers > Import -> upload 02_manufacturers.csv
+#    ... continue in sequence through 12_ip_addresses.csv
+
+# See idc_scenario/README.md for detailed import instructions
+```
+
+#### Option 2: Automated Import Script
+```bash
+# Use the Python bulk import script
+cd idc_scenario
+python upload_script.py
+
+# This will automatically import all CSV files in the correct order
+# Requires NetBox to be running and API token configured
+```
+
+#### Data Included
+- **1 Site**: SMS Pangyo facility (9-story building)
+- **4 Locations**: B1F-DataCenter, 3F/4F/5F-TestLab
+- **12 Racks**: 42U cabinets in the data center
+- **~60 Devices**: Servers, switches, firewalls
+- **Network Configuration**: VLANs, IP prefixes, assigned IPs
+- **Complete topology**: Realistic IDC infrastructure
+
+See `idc_scenario/README.md` and `idc_scenario/USAGE_GUIDE.md` for complete documentation.
 
 ### Documentation
 ```bash
@@ -3276,6 +3398,8 @@ NetBox models represent the **intended state** of network infrastructure, not op
 
 ## Contributing Guidelines
 
+### For Upstream NetBox
+
 From CONTRIBUTING.md:
 
 - **No AI-generated code**: All contributions must be entirely original work
@@ -3285,22 +3409,79 @@ From CONTRIBUTING.md:
 - **Code Quality**:
   - Python syntax must be valid
   - All tests must pass: `./manage.py test`
-  - PEP 8 compliance (line length 120 chars)
-  - Ruff linting must pass
+  - PEP 8 compliance (line length 120 chars, configured in `ruff.toml`)
+  - Ruff linting must pass: `ruff check netbox/`
   - Frontend: ESLint, TypeScript, Prettier compliance
 - **Changelog**: Maintainers handle changelog entries (avoid in PRs to prevent conflicts)
 - **Documentation**: Update docs for new features
+
+### For This Repository (Josephpaik/netbox25)
+
+When working on repository-specific features:
+
+- **Korean Translations**:
+  - Translations are in `netbox/translations/`
+  - Follow Django i18n conventions
+  - Test both Korean and English interfaces
+
+- **IDC Scenario**:
+  - CSV templates must maintain correct field order and dependencies
+  - Test import/export functionality after changes
+  - Update documentation in `idc_scenario/` directory
+
+- **Setup Scripts**:
+  - Test on clean macOS/Rocky Linux installations when possible
+  - Ensure idempotency (scripts can be run multiple times safely)
+  - Update version pinning carefully
 
 ---
 
 ## Additional Resources
 
+### Official NetBox Resources
 - **Official Documentation**: https://docs.netbox.dev/
 - **API Documentation**: Available at `/api/schema/swagger-ui/` and `/api/schema/redoc/`
 - **Plugin Tutorial**: https://github.com/netbox-community/netbox-plugin-tutorial
 - **Community**: GitHub Discussions and NetDev Slack (#netbox channel)
 - **Demo Instance**: https://demo.netbox.dev/
+- **Source Repository**: https://github.com/netbox-community/netbox
+
+### Repository-Specific Resources (Josephpaik/netbox25)
+- **Korean Installation Guide**: `MACBOOK_INSTALL_GUIDE.md`
+- **Korean Quickstart Checklist**: `QUICKSTART_CHECKLIST.md`
+- **IDC Scenario Documentation**:
+  - Overview: `idc_scenario/README.md`
+  - Summary: `idc_scenario/SUMMARY.md`
+  - Usage Guide: `idc_scenario/USAGE_GUIDE.md`
+- **Setup Scripts**:
+  - macOS: `setup_macos.sh`
+  - Rocky Linux: `setup_rocky.sh`
+  - Upgrade: `upgrade.sh`
+
+### Quick Reference Files
+- **Contributing**: `CONTRIBUTING.md`
+- **Security**: `SECURITY.md`
+- **License**: `LICENSE.txt`
+- **Requirements**: `requirements.txt`, `base_requirements.txt`
+- **Project Config**: `pyproject.toml`, `ruff.toml`
 
 ---
 
 *This comprehensive guide covers the essential architecture, patterns, and implementation details needed to work effectively with the NetBox codebase. For specific implementation details not covered here, refer to the source code or official documentation.*
+
+## Summary for AI Assistants
+
+When working with this repository, remember:
+
+1. **This is a fork** with Korean localization and IDC scenario features
+2. **Use automated setup** when possible (`setup_macos.sh` or `setup_rocky.sh`)
+3. **Test data is available** in `idc_scenario/` for realistic scenarios
+4. **Code quality** is enforced with Ruff (line length: 120, Python 3.10+)
+5. **Django patterns** follow NetBox conventions (PrimaryModel, NetBoxModelForm, etc.)
+6. **API-first design** - REST API and GraphQL are first-class citizens
+7. **Permission system** uses RestrictedQuerySet for object-level permissions
+8. **Change logging** is automatic for all PrimaryModel objects
+9. **Korean documentation** is available for non-English users
+10. **Import order matters** for CSV data (Sites → Manufacturers → DeviceTypes → Devices → ...)
+
+For detailed architecture information, see the extensive sections above on Models, Views, Forms, Tables, API, Permissions, Scripts, Webhooks, and Testing.
