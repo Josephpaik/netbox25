@@ -9,7 +9,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netbox',
-        'USER': 'root',
+        'USER': 'netbox',
         'PASSWORD': 'netbox1234!',
         'HOST': 'localhost',
         'PORT': '5432',
