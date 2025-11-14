@@ -12,7 +12,7 @@ DATABASES = {
         'USER': 'netbox',
         'PASSWORD': 'netbox1234!',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '',
         'CONN_MAX_AGE': 300,
     }
 }
